@@ -23,7 +23,9 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
 ]
 
-dependencies = []  # Will add phx, ph-units, honeybee_ph later
+dependencies = [
+    "phx>=1.51",  # Passive House data models (brings ph-units, honeybee-ph)
+]
 
 [project.optional-dependencies]
 dev = [
