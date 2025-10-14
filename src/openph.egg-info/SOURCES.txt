@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+src/openph/__init__.py
+src/openph.egg-info/PKG-INFO
+src/openph.egg-info/SOURCES.txt
+src/openph.egg-info/dependency_links.txt
+src/openph.egg-info/requires.txt
+src/openph.egg-info/top_level.txt
+src/openph/attributes/__init__.py
+src/openph/model/__init__.py
+src/openph/solvers/__init__.py
+src/openph/solvers/base.py
+tests/test_solver_base.py

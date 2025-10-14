@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: openph
+Version: 0.1.0a1
+Summary: Open source Passive House calculation engine with extensible plugin architecture
+Author-email: Open-PH Contributors <info@bldgtyp.com>
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Requires-Dist: pytest>=8.4.2; extra == "dev"
+Requires-Dist: ruff>=0.14.0; extra == "dev"
+Requires-Dist: black>=25.9.0; extra == "dev"
+Requires-Dist: isort>=7.0.0; extra == "dev"
+Requires-Dist: rich>=14.2.0; extra == "dev"
+Requires-Dist: build>=1.3.0; extra == "dev"
+
+# openph
+Open source Passive House calculation engine with extensible plugin architecture

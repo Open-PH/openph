@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=68.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openph"
+version = "0.1.0-alpha.1"
+description = "Open source Passive House calculation engine with extensible plugin architecture"
+authors = [
+    { name = "Open-PH Contributors", email = "info@bldgtyp.com" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+
+dependencies = []  # Will add phx, ph-units, honeybee_ph later
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.4.2",
+    "ruff>=0.14.0",
+    "black>=25.9.0",
+    "isort>=7.0.0",
+    "rich>=14.2.0",
+    "build>=1.3.0",
+]
+
+# Entry points for solver plugins
+[project.entry-points."openph.solvers"]
+# Empty initially - solvers will register themselves via external packages
+
+# Entry points for attribute plugins
+[project.entry-points."openph.attributes"]
+# Empty initially - attributes will register themselves via external packages
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+ignore = ["E501"]  # Line too long (handled by formatter)
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.black]
+line-length = 120
+target-version = ["py310", "py311", "py312", "py313"]
+
+[tool.isort]
+profile = "black"
+line_length = 120
