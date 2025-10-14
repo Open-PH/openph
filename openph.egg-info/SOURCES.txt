@@ -6,6 +6,7 @@ openph.egg-info/dependency_links.txt
 openph.egg-info/requires.txt
 openph.egg-info/top_level.txt
 src/__init__.py
+src/openph_model.py
 src/attributes/__init__.py
 src/attributes/base.py
 src/attributes/manager.py
@@ -42,6 +43,7 @@ src/solvers/registry.py
 tests/test_attribute_base.py
 tests/test_attribute_manager.py
 tests/test_attribute_registry.py
+tests/test_openph_model.py
 tests/test_solver_base.py
 tests/test_solver_manager.py
 tests/test_solver_registry.py
