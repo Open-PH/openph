@@ -7,7 +7,9 @@ src/openph.egg-info/dependency_links.txt
 src/openph.egg-info/requires.txt
 src/openph.egg-info/top_level.txt
 src/openph/attributes/__init__.py
+src/openph/attributes/base.py
 src/openph/model/__init__.py
 src/openph/solvers/__init__.py
 src/openph/solvers/base.py
+tests/test_attribute_base.py
 tests/test_solver_base.py
