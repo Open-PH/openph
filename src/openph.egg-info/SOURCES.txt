@@ -8,8 +8,16 @@ src/openph.egg-info/requires.txt
 src/openph.egg-info/top_level.txt
 src/openph/attributes/__init__.py
 src/openph/attributes/base.py
+src/openph/attributes/manager.py
+src/openph/attributes/registry.py
 src/openph/model/__init__.py
 src/openph/solvers/__init__.py
 src/openph/solvers/base.py
+src/openph/solvers/manager.py
+src/openph/solvers/registry.py
 tests/test_attribute_base.py
+tests/test_attribute_manager.py
+tests/test_attribute_registry.py
 tests/test_solver_base.py
+tests/test_solver_manager.py
+tests/test_solver_registry.py
