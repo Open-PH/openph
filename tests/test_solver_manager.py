@@ -93,17 +93,19 @@ class SystemsSolver:
 
 class FailingSolver:
     """Solver that always fails."""
-    
+
     solver_name = "failing"
     solver_version = "1.0.0"
     solver_priority = SolverPriority.SYSTEMS  # Same priority as systems
     depends_on: List[str] = ["demand"]  # But runs before systems due to dependency
-    
+
     def solve(self, model: MockModel) -> MockModel:
         raise RuntimeError("Intentional failure for testing")
-    
+
     def validate_dependencies(self, available_solvers: Set[str]) -> bool:
         return "demand" in available_solvers
+
+
 # ============================================================================
 # SolverManager Basic Tests
 # ============================================================================
@@ -254,7 +256,7 @@ class TestSolverExecution:
     def test_execute_solver_with_error(self):
         """Test that solver errors are properly wrapped."""
         manager = SolverManager()
-        
+
         # Register demand (dependency) and failing solver
         for solver_class in [DemandSolver, FailingSolver]:
             info = SolverInfo(
@@ -264,23 +266,25 @@ class TestSolverExecution:
                 depends_on=set(solver_class.depends_on),
             )
             manager.registry._solvers[info.name] = info
-        
+
         manager.registry._discovered = True
-        
+
         # Execute should raise SolverExecutionError
         # First execute demand to satisfy dependency
         model = MockModel()
         model.data["foundation"] = "complete"  # Fake foundation execution
         manager.execute_solver("demand", model, validate_dependencies=False)
-        
+
         # Now execute failing solver
         with pytest.raises(SolverExecutionError) as exc_info:
             manager.execute_solver("failing", model)
-        
+
         error = exc_info.value
         assert error.solver_name == "failing"
         assert "Intentional failure" in str(error)
         assert error.original_exception is not None
+
+
 # ============================================================================
 # Execute All Tests
 # ============================================================================
