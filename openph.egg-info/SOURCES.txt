@@ -1,5 +1,11 @@
 README.md
 pyproject.toml
+openph.egg-info/PKG-INFO
+openph.egg-info/SOURCES.txt
+openph.egg-info/dependency_links.txt
+openph.egg-info/requires.txt
+openph.egg-info/top_level.txt
+src/__init__.py
 src/attributes/__init__.py
 src/attributes/base.py
 src/attributes/manager.py
@@ -29,11 +35,6 @@ src/model/schedules/__init__.py
 src/model/schedules/collection.py
 src/model/schedules/occupancy.py
 src/model/schedules/ventilation.py
-src/openph.egg-info/PKG-INFO
-src/openph.egg-info/SOURCES.txt
-src/openph.egg-info/dependency_links.txt
-src/openph.egg-info/requires.txt
-src/openph.egg-info/top_level.txt
 src/solvers/__init__.py
 src/solvers/base.py
 src/solvers/manager.py

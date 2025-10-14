@@ -44,10 +44,17 @@ dev = [
 # Empty initially - attributes will register themselves via external packages
 
 [tool.setuptools]
-package-dir = {"" = "src"}
-
-[tool.setuptools.packages.find]
-where = ["src"]
+packages = [
+    "openph",
+    "openph.solvers",
+    "openph.attributes",
+    "openph.model",
+    "openph.model.hvac",
+    "openph.model.loads",
+    "openph.model.programs",
+    "openph.model.schedules",
+]
+package-dir = {"openph" = "src"}
 
 [tool.ruff]
 line-length = 120
